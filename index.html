@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Video Player JS</title>
+  <style>
+    body {
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    video {
+      width: 90%;
+      max-width: 600px;
+      margin-top: 20px;
+      border-radius: 12px;
+    }
+    button {
+      margin: 8px;
+      padding: 10px 16px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Video Player JavaScript</h2>
+
+  <video id="myVideo">
+    <source src="video.mp4" type="video/mp4">
+    Browser kamu tidak mendukung video.
+  </video>
+
+  <div>
+    <button onclick="playVideo()">▶ Play</button>
+    <button onclick="pauseVideo()">⏸ Pause</button>
+    <button onclick="slow()">🐢 0.5x</button>
+    <button onclick="normal()">▶ 1x</button>
+    <button onclick="fast()">⚡ 2x</button>
+    <button onclick="full()">⛶ Fullscreen</button>
+  </div>
+
+  <script>
+    const video = document.getElementById("myVideo");
+
+    function playVideo() {
+      video.play();
+    }
+
+    function pauseVideo() {
+      video.pause();
+    }
+
+    function slow() {
+      video.playbackRate = 0.5;
+    }
+
+    function normal() {
+      video.playbackRate = 1;
+    }
+
+    function fast() {
+      video.playbackRate = 2;
+    }
+
+    function full() {
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      }
+    }
+  </script>
+
+</body>
+</html>
